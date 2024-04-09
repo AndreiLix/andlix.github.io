@@ -1,105 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{ blog_title }} – {{ blog_description }}</title>
-    <!-- SEO metadata tags -->
-    <meta name="description" content="{{ blog_description }}" />
-    <meta property="og:title" content="{{ blog_title }}" />
-    <meta property="og:description" content="{{ blog_description }}" />
-    <meta property="og:url" content="{{ blog_url }}" />
-    <meta property="og:image" content="{{ blog_image }}" />
-    <meta property="og:site_name" content="{{ site_name }}" />
-    <meta property="twitter:title" content="{{ blog_title }}" />
-    <meta property="twitter:image" content="{{ blog_image }}" />
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ css_path }}" />
-    <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="{{ blog_title }} - {{ blog_description }}" href="{{ rss_feed }}" />
-    <!-- Responsive design -->
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
-    <!-- MathJax for mathematical equations -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        TeX: { equationNumbers: { autoNumber: "all" } },
-        tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true }
-      });
-    </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-  </head>
-
-  <body>
-    <div id="bar"></div>
-    <div class="wrapper-container">
-      <!-- Masthead -->
-      <div class="wrapper-masthead">
-        <div class="container">
-          <header class="masthead clearfix">
-            <a href="/" class="site-avatar"><img src="{{ site_avatar }}" alt="" /></a>
-            <div class="site-info">
-              <h1 class="site-name"><a href="/">{{ blog_title }}</a></h1>
-              <p class="site-description">{{ blog_description }}</p> 
-            </div>
-            <!-- Navigation -->
-            <nav>
-              <a href="/">Home</a>
-              <a href="/search">Search</a>
-              <a href="/about">About</a>
-            </nav>
-          </header>
-        </div>
-      </div>
-
-      <!-- Main content -->
-      <div class="wrapper-main">
-        <div id="main" role="main" class="container">
-          <div class="posts">
-            <!-- List of blog posts -->
-            {% for post in posts %}
-              <article class="post">
-                <a href="{{ post.url }}">
-                  <h1>{{ post.title }}</h1>
-                  <img src="{{ post.image }}" alt="">
-                  <div>
-                    <p class="post_date">{{ post.date }}</p>
-                  </div>
-                </a>
-                <div class="entry">
-                  <!-- Entry content -->
-                  {{ post.content }}
-                </div>
-                <a href="{{ post.url }}" class="read-more">Read More</a>
-              </article>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="wrapper-footer">
-        <div class="container">
-          <footer class="footer">
-            <!-- Social media links -->
-            {% for link in social_links %}
-              <a href="{{ link.url }}"><i class="svg-icon {{ link.icon }}"></i></a>
-            {% endfor %}
-          </footer>
-        </div>
-      </div>
-    </div>
-
-    <!-- Google Analytics -->
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', '{{ analytics_id }}', 'auto');
-      ga('send', 'pageview', {
-        'page': '{{ current_page }}',
-        'title': ''
-      });
-    </script>
-    <!-- End Google Analytics -->
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Projects Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        main {
+            padding: 20px;
+        }
+        .project {
+            margin-bottom: 30px;
+        }
+        .project h2 {
+            margin-bottom: 10px;
+        }
+        .project p {
+            margin-bottom: 5px;
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Machine Learning Projects Blog</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+    <main>
+        <article class="project">
+            <h2>Project Title 1</h2>
+            <p>Description of the project goes here.</p>
+            <img src="project1.jpg" alt="Project 1">
+            <p><a href="project1_details.html">Read More</a></p>
+        </article>
+        <article class="project">
+            <h2>Project Title 2</h2>
+            <p>Description of the project goes here.</p>
+            <img src="project2.jpg" alt="Project 2">
+            <p><a href="project2_details.html">Read More</a></p>
+        </article>
+        <!-- Add more projects as needed -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Name</p>
+    </footer>
+</body>
 </html>
