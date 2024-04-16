@@ -110,3 +110,9 @@ footer p {
     }
 }
 
+
+/* Remove underline from all links */
+a {
+    text-decoration: none;
+}
+
