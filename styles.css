@@ -34,7 +34,8 @@ main {
 }
 
 .project {
-    width: 45%;
+    width: 100%; /* Set the initial width to 100% */
+    max-width: 400px; /* Set a maximum width to prevent tiles from becoming too wide on larger screens */
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -43,6 +44,18 @@ main {
     transition: transform 0.3s ease-in-out;
 }
 
+@media screen and (min-width: 768px) {
+    .project {
+        width: calc(50% - 20px); /* Set the width to 50% of the viewport width minus margin */
+        margin-right: 20px; /* Add margin between the tiles */
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .project {
+        width: calc(33.33% - 20px); /* Set the width to 33.33% of the viewport width minus margin */
+    }
+}
 .project:hover {
     transform: translateY(-5px);
 }
