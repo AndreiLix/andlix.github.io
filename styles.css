@@ -81,8 +81,6 @@ footer p {
     position: absolute;
     top: 20px;
     right: 20px;
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     border: 3px solid #367c39;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -92,6 +90,8 @@ footer p {
             position: relative;
             top: 0;
             right: 0;
+            width: 70px;
+            height: 70px;
             margin-top: 20px; /* Adjust this value as needed */
             margin-right: 20px; /* Adjust this value as needed */
             float: right;
@@ -101,6 +101,8 @@ footer p {
     @media screen and (min-width: 769px) {
         .profile-pic {
             position: absolute;
+            width: 100px;
+            height: 100px;
             top: 20px;
             right: 20px;
         }
