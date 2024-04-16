@@ -81,28 +81,32 @@ footer p {
     position: absolute;
     top: 20px;
     right: 20px;
+    width: 100px; /* Default width */
+    height: 100px; /* Default height */
     border-radius: 50%;
     border: 3px solid #367c39;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    
-    @media screen and (max-width: 768px) {
-        .profile-pic {
-            width: 70px;
-            height: 70px;
+}
 
-            top: 0;
-            right: 0;
-            margin-top: 20px; /* Adjust this value as needed */
-            margin-right: 20px; /* Adjust this value as needed */
-            float: right;
-        }
+/* Media query for screens with a maximum width of 768px (phones and small tablets) */
+@media screen and (max-width: 768px) {
+    .profile-pic {
+        width: 70px;
+        height: 70px;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust this value as needed */
+        margin-right: 20px; /* Adjust this value as needed */
+        float: right;
     }
-    
-    @media screen and (min-width: 769px) {
-        .profile-pic {
-            width: 100px;
-            height: 100px;
-            top: 20px;
-            right: 20px;
-        }
+}
+
+/* Media query for screens with a minimum width of 769px (larger screens) */
+@media screen and (min-width: 769px) {
+    .profile-pic {
+        /* No need to redefine width and height here */
+        top: 20px;
+        right: 20px;
     }
+}
+
